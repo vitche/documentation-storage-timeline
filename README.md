@@ -2,6 +2,9 @@
 Document version 1.1 by [Andrew](mailto:andrew@fucken.me), 2010 - 2025 (c).
 
 ## Introduction
+
+<img src="./storage.timeline.png" alt="Storage.Timeline" style="position: relative; float: right; width: 217px;" />
+
 **Storage.Timeline** is an OpenSource specialized database for storing time series data from the perspective of:
 - storage portability;
 - processing performance;
