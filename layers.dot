@@ -1,0 +1,36 @@
+digraph StorageTimeline {
+  rankdir=TB;
+  splines=true;
+  node [shape=box, style="filled,rounded", fontname="Arial", fontsize=11];
+
+  /* Top-level: Storage root directory */
+  Storage [ label = "Storage\n(storage_root/)", fillcolor="#D8D8D8" ];
+
+  /* Second-level: Schemas */
+  Schemas [ label = "Schemas\n(schema_1, schema_2, ...)", fillcolor="#CFE2F3" ];
+
+  /* Third-level: Timelines within each Schema */
+  Timelines [ label = "Timelines\n(timeline_1, timeline_2, ...)", fillcolor="#FFF2CC" ];
+
+  /* Fourth-level: Data records in each Timeline file */
+  Data [ label = "Records\n(Binary Format)", fillcolor="#FCE5CD" ];
+
+  /* Individual record types allowed by Storage.Timeline */
+  Numbers      [ label = "Numbers",       fillcolor="#F4CCCC" ];
+  Strings      [ label = "Strings",       fillcolor="#F4CCCC" ];
+  Buffers      [ label = "Buffers",       fillcolor="#F4CCCC" ];
+  JSONObjects  [ label = "JSON Documents",     fillcolor="#F4CCCC" ];
+  GraphEdges   [ label = "Graph Edges\n(Storage.Timeline.Graph)", fillcolor="#F4CCCC" ];
+
+  /* Connect the layers */
+  Storage     -> Schemas;
+  Schemas     -> Timelines;
+  Timelines   -> Data;
+
+  /* Show the different record data types branching from the "Data" node */
+  Data -> Numbers;
+  Data -> Strings;
+  Data -> Buffers;
+  Data -> JSONObjects;
+  Data -> GraphEdges;
+}

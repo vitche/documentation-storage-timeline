@@ -50,6 +50,24 @@ REST APIs are:
 
 You should avoid integrating the REST API for solutions demanding more than **1000000 (1M) records of data transfer at a time**.
 
+### `Storage.Timeline` layers
+![layers.png](./layers.png)
+
+Explanation of the Diagram:
+
+1. “Storage (storage_root/)” is the root directory where your entire database is located.
+2. “Schemas” are subdirectories (schema_1, schema_2, …) that group related timelines.
+3. Each “Timeline” is typically a single file in the schema directory, storing time-series records.
+4. Within each timeline file, individual “Records” are stored in the described binary format (size → timestamp → value).
+5. Those records can encode:  
+   • Numeric values (64-bit floats)  
+   • Strings (UTF-8)  
+   • Buffers (arbitrary binary data)  
+   • JSON Documents (encoded as strings)  
+   • Graph data (serialized as JSON edges of the form s,t,w)
+
+This layered architecture makes it straightforward to organize data by schema, then timeline, and finally store each record according to its type (numbers, strings, buffers, JSON documents, or graph edges).
+
 ### `Storage.Timeline` data format
 [format.md](./format.md)
 
@@ -66,3 +84,4 @@ But now we think that it was not more than a tribute to the marketing trend.
 
 ## License
 [GNU GENERAL PUBLIC LICENSE](https://github.com/vitche/documentation-storage-timeline/blob/main/LICENSE)
+
