@@ -50,8 +50,11 @@ REST APIs are:
 
 You should avoid integrating the REST API for solutions demanding more than **1000000 (1M) records of data transfer at a time**.
 
-### Storage.Timeline data format
+### `Storage.Timeline` data format
 [format.md](./format.md)
+
+### `Storage.Timeline.Graph` data format
+[graph.md](./graph.md)
 
 ## Terminology
 
