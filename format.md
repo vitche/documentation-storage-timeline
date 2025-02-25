@@ -1,4 +1,4 @@
-## Storage.Timeline Format Documentation
+## `Storage.Timeline` Format Documentation
 
 This document describes the internal format of the Storage.Timeline database system, including both its hierarchical folder structure and the binary format used to store time-series data.
 
