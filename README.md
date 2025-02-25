@@ -58,7 +58,7 @@ Explanation of the Diagram:
 1. “Storage (storage_root/)” is the root directory where your entire database is located.
 2. “Schemas” are subdirectories (schema_1, schema_2, …) that group related timelines.
 3. Each “Timeline” is typically a single file in the schema directory, storing time-series records.
-4. Within each timeline file, individual “Records” are stored in the described binary format (size → timestamp → value).
+4. Within each timeline file, individual “Records” are stored in the described binary format (`size` → `timestamp` → `value`).
 5. Those records can encode:  
    • Numeric values (64-bit floats);
    • Strings (UTF-8);
