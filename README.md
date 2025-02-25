@@ -1,5 +1,5 @@
 # Storage.Timeline ~~NoSQL~~ database white-paper
-Document version 1.0 by [Andrew](mailto:andrew@fucken.me), 2010 - 2022 (c).
+Document version 1.1 by [Andrew](mailto:andrew@fucken.me), 2010 - 2025 (c).
 
 ## Introduction
 **Storage.Timeline** is an OpenSource specialized database for storing time series data from the perspective of:
@@ -49,6 +49,9 @@ REST APIs are:
 - easy to integrate due to the REST spread over the years.
 
 You should avoid integrating the REST API for solutions demanding more than **1000000 (1M) records of data transfer at a time**.
+
+### Storage.Timeline data format
+[format.md](./format.md)
 
 ## Terminology
 
